@@ -39,7 +39,7 @@ for x in range(0, len(data1)):
 	coderua = str(int(data1.iloc[x,8]))
 	rua = data1.iloc[x,9]
 	freg = data1.iloc[x,10]
-	print('?- assert( nodo(' + gid + ', ' + latitude + ', ' + longitude + ', \'' + conserv + '\', \'' + abrigo + '\', \'' + publi + '\', \'' + operador + '\', \'' + carreira + '\', ' + coderua + ', \'' +  rua.encode('ascii','ignore').replace(',','-') + '\', \'' + freg.encode('ascii','ignore').replace(',','-') + '\') ).')
+	print('?- assert( nodo(' + gid + ', ' + latitude + ', ' + longitude + ', \'' + conserv + '\', \'' + abrigo + '\', \'' + publi + '\', \'' + operador + '\', [' + carreira + '], ' + coderua + ', \'' +  rua.encode('ascii','ignore').replace(',','-') + '\', \'' + freg.encode('ascii','ignore').replace(',','-') + '\') ).')
 
 #print(data1.iloc[0,1])
 #print(str(total_dist / entries))
