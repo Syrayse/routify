@@ -52,8 +52,6 @@ depth_first_aux(Y, Q, P,V) :-              % Pop da fila de espera
       append_queue(R, Qp, Qf),
       depth_first_aux(Y,Qf,P,Vf).
 
-% ---- 3) Iterative Deepening Depth-First.
-
 % #########################################################
 % Metodos de Procura Informada.
 
