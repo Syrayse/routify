@@ -1,3 +1,21 @@
+% #########################################################
+% ## SRCR - Dominio de Contratacao Publica.              ##
+% ## Trabalho individual aluno nº 84930.                 ##
+% ## Ano letivo 2019/20 - MIEI.                          ##
+% ##                                                     ##
+% ## --------------------------------------------------- ##
+% ##                                                     ##
+% ## Ficheiro: povoamento.pl                             ##
+% ## Descricao: O presente ficheiro  tem o  objetivo  de ##
+% ## definir fazer um povoamento  inicial da base de co- ##
+% ## nhecimento para esta, e  respectivos predicado, po- ##
+% ## derem posteriormente ser testados. Fazendo a inser- ##
+% ## cao de conhecimento  adequado ao seu respetivo tes- ##
+% ## te.                                                 ##
+% #########################################################
+
+% #########################################################
+% Povoamento de arestas.
 ?- assert( aresta(01, 183, 791, 87.6354129334) ).
 ?- assert( aresta(01, 791, 183, 87.6354129334) ).
 ?- assert( aresta(01, 791, 595, 698.692931766) ).
@@ -3040,6 +3058,9 @@
 ?- assert( aresta(776, 897, 895, 15.8432319935) ).
 ?- assert( aresta(776, 897, 681, 590.763814142) ).
 ?- assert( aresta(776, 681, 897, 590.763814142) ).
+
+% #########################################################
+% Povoamento de todos os nodos da rede
 ?- assert( nodo(79, -107011.55, -95214.57, Bom, Fechado dos Lados, Yes, Vimeca, 01, 103, Rua Damio de Gis, Algs- Linda-a-Velha e Cruz Quebrada-Dafundo) ).
 ?- assert( nodo(593, -103777.02, -94637.67, Bom, Sem Abrigo, No, Vimeca, 01, 300, Avenida dos Cavaleiros, Carnaxide e Queijas) ).
 ?- assert( nodo(499, -103758.44, -94393.36, Bom, Fechado dos Lados, Yes, Vimeca, 01, 300, Avenida dos Cavaleiros, Carnaxide e Queijas) ).
