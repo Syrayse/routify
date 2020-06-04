@@ -19,6 +19,17 @@
 
 :- op(900,xfy,'::').
 
+% Libs utilizadas nos algoritmos.
+
+% ---- 1) Filas de espera com prioridade.
+?- use_module(library(heaps)).
+
+% ---- 2) Filas de espera.
+?- use_module(library(queues)).
+
+% ---- 3) Conjuntos.
+?- use_module(library(ordsets)).
+
 % Inclui utensilios base, i.e. inverso, membro, ...
 :- include('utils.pl').
 
