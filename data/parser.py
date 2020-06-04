@@ -1,10 +1,9 @@
 import pandas as pd
 import math
 
+data1 = pd.read_excel("dataset2.xlsx", encoding='ascii', errors='ignore')
 
-data1 = pd.read_excel("../dataset2.xlsx", encoding='ascii', errors='ignore')
-
-data2 = pd.read_excel("../dataset.xlsx", sheet_name=None, encoding='ascii', errors='ignore')
+data2 = pd.read_excel("dataset.xlsx", sheet_name=None, encoding='ascii', errors='ignore')
 
 rows = 0
 total_dist = 0
