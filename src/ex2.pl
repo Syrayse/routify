@@ -30,6 +30,14 @@
 % ---- 3) Conjuntos.
 ?- use_module(library(ordsets)).
 
+% Predicados utilizados.
+
+% ---- 1) Nodo.
+:- dynamic nodo/11.
+
+% ---- 2) Aresta.
+:- dynamic aresta/4.
+
 % Inclui utensilios base, i.e. inverso, membro, ...
 :- include('utils.pl').
 
