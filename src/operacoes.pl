@@ -78,9 +78,9 @@ candidatos_inteligente(GI, GF, K, R) :-
 		aresta(C, G1, G2, D),
 		( aresta(C, G1, G2, D),
 		  ( ( nodo(G1,X,Y,_,_,_,_,_,_,_,_),
-		      teste_inteligente(X,Y,OX,OY,Dist2,RHS) ) ;
+		      teste_inteligente(X,Y,OX,OY,DX,DY,Vx,Vy,RHS,Psi) ) ;
 		    ( nodo(G2,X,Y,_,_,_,_,_,_,_,_),
-    		      teste_inteligente(X,Y,OX,OY,Dist2,RHS) )) ),
+    		      teste_inteligente(X,Y,OX,OY,DX,DY,Vx,Vy,RHS,Psi) )) ),
 		R
 	),
 	retract_all(R).

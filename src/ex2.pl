@@ -28,6 +28,9 @@
 % Inclui todos os metodos de procura.
 :- include('procura.pl').
 
+% Incluir todas as queries necessarias.
+:- include('queries.pl').
+
 % Inclui todo o povoamento desenvolvido,
 :- include('povoamento.pl').
 
