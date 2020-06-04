@@ -3108,8 +3108,7 @@
 ?- assert( nodo(39, -104282.32, -95055.6, 'Bom', 'Fechado dos Lados', 'Yes', 'Vimeca', [01,10,13,15], 306, 'Rua dos Cravos de Abril', 'Carnaxide e Queijas') ).
 ?- assert( nodo(620, -104565.88329, -94653.6785929, 'Bom', 'Sem Abrigo', 'No', 'Vimeca', [01,10,13,15], 365, 'Estrada da Portela', 'Carnaxide e Queijas') ).
 ?- assert( nodo(45, -104578.88, -94652.12, 'Bom', 'Sem Abrigo', 'No', 'Vimeca', [01,10,13,15], 365, 'Estrada da Portela', 'Carnaxide e Queijas') ).
-?- assert( nodo(51, -104458.04, -94329.86, 'Bom', 'Fechado dos Lados
-', 'No', 'Vimeca', [01,10,13,15], 1123, 'Rua da Quinta do Paizinho', 'Carnaxide e Queijas') ).
+?- assert( nodo(51, -104458.04, -94329.86, 'Bom', 'Fechado dos Lados', 'No', 'Vimeca', [01,10,13,15], 1123, 'Rua da Quinta do Paizinho', 'Carnaxide e Queijas') ).
 ?- assert( nodo(628, -104278.886666, -94122.5660364, 'Bom', 'Sem Abrigo', 'No', 'Vimeca', [01,10,13,15], 1123, 'Rua da Quinta do Paizinho', 'Carnaxide e Queijas') ).
 ?- assert( nodo(50, -104287.85, -94105.37, 'Bom', 'Fechado dos Lados', 'Yes', 'Vimeca', [01,10,13,15], 1123, 'Rua da Quinta do Paizinho', 'Carnaxide e Queijas') ).
 ?- assert( nodo(38, -104497.842173, -94358.9088811, 'Bom', 'Fechado dos Lados', 'Yes', 'Vimeca', [01,10,13,15], 1123, 'Rua da Quinta do Paizinho', 'Carnaxide e Queijas') ).
@@ -3325,7 +3324,7 @@
 ?- assert( nodo(583, -108734.22, -103555.55, 'Bom', 'Fechado dos Lados', 'No', 'LT', [106], 1392, 'Rua da Medrosa', 'Oeiras e So Julio da Barra- Pao de Arcos e Caxias') ).
 ?- assert( nodo(285, -105368.2, -101892.7, 'Bom', 'Sem Abrigo', 'No', 'LT', [106], 1497, 'Avenida dos Bombeiros Voluntrios de Oeiras', 'Porto Salvo') ).
 ?- assert( nodo(284, -105349.84, -101863.8, 'Bom', 'Sem Abrigo', 'No', 'LT', [106], 1497, 'Avenida dos Bombeiros Voluntrios de Oeiras', 'Porto Salvo') ).
-?- assert( nodo(751, -103269.77, -101294.22, 'Bom', 'Sem Abrigo', 'No', 'LT', [106,,112,119], 262, 'Estrada de Leceia', 'Porto Salvo') ).
+?- assert( nodo(751, -103269.77, -101294.22, 'Bom', 'Sem Abrigo', 'No', 'LT', [106,112,119], 262, 'Estrada de Leceia', 'Porto Salvo') ).
 ?- assert( nodo(310, -107559.62, -102708.32, 'Bom', 'Fechado dos Lados', 'Yes', 'LT', [106,111,112,115,122], 514, 'Largo Avio Lusitnia', 'Oeiras e So Julio da Barra- Pao de Arcos e Caxias') ).
 ?- assert( nodo(505, -107655.06, -102500.24, 'Bom', 'Fechado dos Lados', 'Yes', 'LT', [106,111,112,115,122], 533, 'Rua Cndido dos Reis', 'Oeiras e So Julio da Barra- Pao de Arcos e Caxias') ).
 ?- assert( nodo(501, -107752.93, -102745.45, 'Bom', 'Fechado dos Lados', 'Yes', 'LT', [106,111,112,115,122], 559, 'Rua Desembargador Faria', 'Oeiras e So Julio da Barra- Pao de Arcos e Caxias') ).
@@ -3691,7 +3690,7 @@
 ?- assert( nodo(293, -105274.84, -101913.18, 'Bom', 'Fechado dos Lados', 'Yes', 'Vimeca', [15], 1682, 'Avenida Santa Casa da Misericordia de Oeiras', 'Porto Salvo') ).
 ?- assert( nodo(292, -105227.47, -102176.58, 'Bom', 'Fechado dos Lados', 'Yes', 'Vimeca', [15], 1682, 'Avenida Santa Casa da Misericordia de Oeiras', 'Porto Salvo') ).
 ?- assert( nodo(291, -105291.98, -101912.29, 'Bom', 'Fechado dos Lados', 'Yes', 'Vimeca', [15], 1682, 'Avenida Santa Casa da Misericordia de Oeiras', 'Porto Salvo') ).
-?- assert( nodo(719, -102227.22, -101894.71, 'Bom', 'Fechado dos Lados', 'Yes', 'Vimeca', [15,], 1667, 'Avenida Professor Dr. Cavaco Silva', 'Porto Salvo') ).
+?- assert( nodo(719, -102227.22, -101894.71, 'Bom', 'Fechado dos Lados', 'Yes', 'Vimeca', [15], 1667, 'Avenida Professor Dr. Cavaco Silva', 'Porto Salvo') ).
 ?- assert( nodo(729, -102515.87, -101878.09, 'Bom', 'Fechado dos Lados', 'Yes', 'Vimeca', [15,23], 1667, 'Avenida Professor Dr. Cavaco Silva', 'Porto Salvo') ).
 ?- assert( nodo(718, -102227.55, -101920.36, 'Bom', 'Fechado dos Lados', 'Yes', 'Vimeca', [15,23], 1667, 'Avenida Professor Dr. Cavaco Silva', 'Porto Salvo') ).
 ?- assert( nodo(706, -101856.51, -101822.02, 'Bom', 'Fechado dos Lados', 'Yes', 'Vimeca', [15,23], 1667, 'Avenida Professor Dr. Cavaco Silva', 'Porto Salvo') ).
@@ -3744,8 +3743,7 @@
 ?- assert( nodo(12, -105655.76, -95028.52, 'Bom', 'Fechado dos Lados', 'Yes', 'LT', [162], 116, 'Avenida General Norton de Matos', 'Algs- Linda-a-Velha e Cruz Quebrada-Dafundo') ).
 ?- assert( nodo(666, -106799.63, -95251.22, 'Bom', 'Sem Abrigo', 'No', 'LT', [162], 155, 'Praa Doutor Manuel Martins', 'Algs- Linda-a-Velha e Cruz Quebrada-Dafundo') ).
 ?- assert( nodo(658, -106786.858468, -95149.7421828, 'Bom', 'Fechado dos Lados', 'Yes', 'LT', [162], 155, 'Praa Doutor Manuel Martins', 'Algs- Linda-a-Velha e Cruz Quebrada-Dafundo') ).
-?- assert( nodo(630, -104458.04, -94329.86, 'Bom', 'Fechado dos Lados
-', 'No', 'LT', [162], 1123, 'Rua da Quinta do Paizinho', 'Carnaxide e Queijas') ).
+?- assert( nodo(630, -104458.04, -94329.86, 'Bom', 'Fechado dos Lados', 'No', 'LT', [162], 1123, 'Rua da Quinta do Paizinho', 'Carnaxide e Queijas') ).
 ?- assert( nodo(629, -104278.886666, -94122.5660364, 'Bom', 'Sem Abrigo', 'No', 'LT', [162], 1123, 'Rua da Quinta do Paizinho', 'Carnaxide e Queijas') ).
 ?- assert( nodo(626, -104287.85, -94105.37, 'Bom', 'Fechado dos Lados', 'Yes', 'LT', [162], 1123, 'Rua da Quinta do Paizinho', 'Carnaxide e Queijas') ).
 ?- assert( nodo(616, -104497.842173, -94358.9088811, 'Bom', 'Fechado dos Lados', 'Yes', 'LT', [162], 1123, 'Rua da Quinta do Paizinho', 'Carnaxide e Queijas') ).
@@ -3838,8 +3836,7 @@
 ?- assert( nodo(603, -104172.68512, -95216.4374015, 'Bom', 'Sem Abrigo', 'No', 'Carris', [714], 347, 'Rua da Liberdade', 'Carnaxide e Queijas') ).
 ?- assert( nodo(623, -104578.88, -94652.12, 'Bom', 'Sem Abrigo', 'No', 'Carris', [714], 365, 'Estrada da Portela', 'Carnaxide e Queijas') ).
 ?- assert( nodo(1032, -104222.841724, -94001.2553577, 'Bom', 'Fechado dos Lados', 'Yes', 'Carris', [714], 1123, 'Rua da Quinta do Paizinho', 'Carnaxide e Queijas') ).
-?- assert( nodo(631, -104458.04, -94329.86, 'Bom', 'Fechado dos Lados
-', 'No', 'Carris', [714], 1123, 'Rua da Quinta do Paizinho', 'Carnaxide e Queijas') ).
+?- assert( nodo(631, -104458.04, -94329.86, 'Bom', 'Fechado dos Lados', 'No', 'Carris', [714], 1123, 'Rua da Quinta do Paizinho', 'Carnaxide e Queijas') ).
 ?- assert( nodo(627, -104278.886666, -94122.5660364, 'Bom', 'Sem Abrigo', 'No', 'Carris', [714], 1123, 'Rua da Quinta do Paizinho', 'Carnaxide e Queijas') ).
 ?- assert( nodo(615, -104497.842173, -94358.9088811, 'Bom', 'Fechado dos Lados', 'Yes', 'Carris', [714], 1123, 'Rua da Quinta do Paizinho', 'Carnaxide e Queijas') ).
 ?- assert( nodo(619, -104458.52, -94926.22, 'Bom', 'Fechado dos Lados', 'Yes', 'Carris', [714], 1134, 'Largo Sete de Junho de 1759', 'Carnaxide e Queijas') ).
