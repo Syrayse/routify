@@ -24,7 +24,7 @@ vizinhos(S,P1,R,V,Q) :-
 
 % ---- 0.1) Vizinhos em heap, calcula todos os vizinhos.
 vizinhos_heap(S,P1,R,V,Ct) :-
-      findall( A,                          %(K,A,[(Pt,K,A)|P1]),
+      findall( A,
             (aresta(Pt, S, A,D),
             ord_nonmember(A, V)
             ), R1),
@@ -77,31 +77,31 @@ star_aux(S,P1,[H|T],V,Ct,L,R,Dest) :-
 
 % ---- 1) Breadth-First.
 breadth_first(X, Y, P) :-
-      list_queue( [(X,[(-1,X)])],Q ),           % Init fila com 1 elem.
+      list_queue( [(X,[(-1,X)])],Q ),
       breadth_first_aux( Y,Q,R,[] ),
       inverso(R, P).
 
-breadth_first_aux(Y, Q, P,V) :-              % Se o prox elem for o destino, sai.
+breadth_first_aux(Y, Q, P,V) :-
       queue_head(Q,(Y,P)).
-breadth_first_aux(Y, Q, P,V) :-              % Pop da fila de espera
+breadth_first_aux(Y, Q, P,V) :-
       append_queue([(S,P1)], Qp, Q),
-      ord_add_element(V,S,Vf),                  % Se nao foi visitado
-      vizinhos(S,P1,R,V,Q),                    % Adiciona todos os vizinhos de S
+      ord_add_element(V,S,Vf),
+      vizinhos(S,P1,R,V,Q),
       queue_append(Qp, R, Qf),
       breadth_first_aux(Y,Qf,P,Vf).
 
 % ---- 2) Depth-First.
 depth_first(X, Y, P) :-
-      list_queue( [(X,[(-1,X)])],Q ),           % Init fila com 1 elem.
+      list_queue( [(X,[(-1,X)])],Q ),
       depth_first_aux( Y,Q,R,[] ),
       inverso(R, P).
 
-depth_first_aux(Y, Q, P,V) :-              % Se o prox elem for o destino, sai.
+depth_first_aux(Y, Q, P,V) :-
       queue_head(Q,(Y,P)).
-depth_first_aux(Y, Q, P,V) :-              % Pop da fila de espera
+depth_first_aux(Y, Q, P,V) :-
       append_queue([(S,P1)], Qp, Q),
-      ord_add_element(V,S,Vf),                  % Se nao foi visitado
-      vizinhos(S,P1,R,Vf,Q),                    % Adiciona todos os vizinhos de S
+      ord_add_element(V,S,Vf),
+      vizinhos(S,P1,R,Vf,Q),
       append_queue(R, Qp, Qf),
       depth_first_aux(Y,Qf,P,Vf).
 
@@ -121,13 +121,13 @@ uniform_cost(X, Y, P) :-
       uniform_cost_aux( Y,Heap,R,[] ),
       inverso(R, P).
 
-uniform_cost_aux(Y, Heap, P,V) :-              % Se o prox elem for o destino, sai.
+uniform_cost_aux(Y, Heap, P,V) :-
       min_of_heap(Heap, C, (C,_,Y,P)).
-uniform_cost_aux(Y, Heap, P,V) :-              % Pop da fila de espera
-      get_from_heap(Heap, K, (K,Dt,S,P1), Heap2), %append_queue([(S,P1)], Qp, Q),
-      ord_add_element(V,S,Vf),                  % Se nao foi visitado
-      vizinhos_heap(S,P1,R,V,K),                    % Adiciona todos os vizinhos de S
-      add_all_heap(Heap2, R, Heapf), !,             %append_queue(R, Qp, Qf),
+uniform_cost_aux(Y, Heap, P,V) :-
+      get_from_heap(Heap, K, (K,Dt,S,P1), Heap2),
+      ord_add_element(V,S,Vf),
+      vizinhos_heap(S,P1,R,V,K),
+      add_all_heap(Heap2, R, Heapf), !,
       uniform_cost_aux(Y,Heapf,P,Vf).
 
 % #########################################################
@@ -144,13 +144,15 @@ greedy_best_first(X,Y,P) :-
       greedy_best_first_aux( Y,Heap,R,[] ),
       inverso(R,P).
 
-greedy_best_first_aux(Y, Heap, P,V) :-              % Se o prox elem for o destino, sai.
+greedy_best_first(Y,Heap,[],_) :-
+      empty_heap(Heap), !, fail.
+greedy_best_first_aux(Y, Heap, P,V) :-
       min_of_heap(Heap, C, (C,_,Y,P)).
-greedy_best_first_aux(Y, Heap, P,V) :-              % Pop da fila de espera
-      get_from_heap(Heap, K, (K,Dt,S,P1), Heap2), %append_queue([(S,P1)], Qp, Q),
-      ord_add_element(V,S,Vf),                  % Se nao foi visitado
-      vizinhos_greedy(S,P1,R,V,Dt,Y),                    % Adiciona todos os vizinhos de S
-      add_all_heap(Heap2, R, Heapf), !,             %append_queue(R, Qp, Qf),
+greedy_best_first_aux(Y, Heap, P,V) :-
+      get_from_heap(Heap, K, (K,Dt,S,P1), Heap2),
+      ord_add_element(V,S,Vf),
+      vizinhos_greedy(S,P1,R,V,Dt,Y),
+      add_all_heap(Heap2, R, Heapf), !,
       greedy_best_first_aux(Y,Heapf,P,Vf).
 
 % ---- 2) A-star.
@@ -160,24 +162,34 @@ a_star(X,Y,P) :-
        fail.
 a_star(X,Y,P) :-
       empty_heap(H),
-      add_to_heap(H, 0, (0,0,X,[(-1,0,X)]) , Heap),
+      add_to_heap(H, 0, (0,0,X,[(-1,0,X)]) , Heap), !,
       a_star_aux( Y,Heap,R,[] ),
       inverso(R,P).
 
-a_star_aux(Y, Heap, P,V) :-              % Se o prox elem for o destino, sai.
+a_star_aux(Y, Heap, P,V) :-
       min_of_heap(Heap, C, (C,_,Y,P)).
-a_star_aux(Y, Heap, P,V) :-              % Pop da fila de espera
-      get_from_heap(Heap, K, (K,Dt,S,P1), Heap2), %append_queue([(S,P1)], Qp, Q),
-      ord_add_element(V,S,Vf),                  % Se nao foi visitado
-      vizinhos_star(S,P1,R,V,Dt,Y),                    % Adiciona todos os vizinhos de S
-      add_all_heap(Heap2, R, Heapf), !,             %append_queue(R, Qp, Qf),
+a_star_aux(Y, Heap, P,V) :-
+      get_from_heap(Heap, K, (K,Dt,S,P1), Heap2),
+      ord_add_element(V,S,Vf),
+      vizinhos_star(S,P1,R,V,Dt,Y),
+      add_all_heap(Heap2, R, Heapf), !,
       a_star_aux(Y,Heapf,P,Vf).
 
 % #########################################################
-% Metodos de Incremental Cutout.
+% Metodos de Cutout.
 
 % ---- 1) Esferico.
+metodo_esferico(SFunc, X, Y, K, R) :-
+      K > 1,
+      candidatos_esfericos(X, Y, K, Del),
+      (call(SFunc, X, Y, R) ; (assert_all(Del), fail)),
+      assert_all(Del).
 
 % ---- 2) Inteligente.
+metodo_inteligente(SFunc, X, Y, K, R) :-
+      K > 1,
+      candidatos_inteligente(X, Y, K, Del),
+      (call(SFunc, X, Y, R) ; (assert_all(Del), fail)),
+      assert_all(Del).
 
 % #########################################################

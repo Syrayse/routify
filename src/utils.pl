@@ -36,4 +36,9 @@ inverso([], Xs, Xs).
 inverso([X|Xs], Ys, Zs):-
 	inverso(Xs, [X|Ys], Zs).
 
+% Concatena duas listas.
+concatenar([],T,T).
+concatenar([X|T1],L2,[X|L]) :-
+	concatenar(T1,L2,L).
+
 % #########################################################

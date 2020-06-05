@@ -18,6 +18,8 @@
 
 % ---- 1) Imprime um elemento originado por uma pesquisa
 % indiferente a distancia.
+show_elem_base((-1,D)) :-
+	write('-> Partindo de '), write(D), write('\n').
 show_elem_base((Pt,D)) :-
 	write('Pela carreira '),
 	write(Pt), write(', chegamos a '),
@@ -25,6 +27,8 @@ show_elem_base((Pt,D)) :-
 
 % ---- 2) Imprime um elemento originado por uma pesquisa
 % com nocao de distancia.
+show_elem_spec((-1,_,D)) :-
+	write('-> Partindo de '), write(D), write('\n').
 show_elem_spec((Pt,Dt,D)) :-
 	write('Pela carreira '),
 	write(Pt), write(', chegamos a '),
@@ -42,16 +46,7 @@ print_high_order([H|T]) :-
 	print_high_order(T).
 
 % ---- 4) Permite a impressa do trajeto global.
-pretty([(-1,_,D)|T]) :-
-	write('------------------- Inicio --------------------\n'),
-	write('-> Partindo de '), write(D), write('\n'),
-	print_high_order(T),
-	write('--------------------- Fim ---------------------\n\n').
-pretty([(-1,D)|T]) :-
-	write('------------------- Inicio --------------------\n'),
-	write('-> Partindo de '), write(D), write('\n'),
-	print_high_order(T),
-	write('--------------------- Fim ---------------------\n\n').
+pretty(L) :- print_high_order(L).
 
 % #########################################################
 % Incremental cutout - utils
