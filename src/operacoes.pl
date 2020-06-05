@@ -14,6 +14,46 @@
 % #########################################################
 
 % #########################################################
+% Permite efetuar um pretty print dos diferentes resultados.
+
+% ---- 1) Imprime um elemento originado por uma pesquisa
+% indiferente a distancia.
+show_elem_base((Pt,D)) :-
+	write('Pela carreira '),
+	write(Pt), write(', chegamos a '),
+	write(D), write('\n').
+
+% ---- 2) Imprime um elemento originado por uma pesquisa
+% com nocao de distancia.
+show_elem_spec((Pt,Dt,D)) :-
+	write('Pela carreira '),
+	write(Pt), write(', chegamos a '),
+	write(D), write(', distancia total de : '),
+	write(Dt), write('\n').
+
+% ---- 3) Permite a impressao do trajeto global, segundo
+% uma funcao de impressao.
+print_high_order([]).
+print_high_order([(A,B,C)|T]) :-
+	show_elem_spec((A,B,C)),
+	print_high_order(T).
+print_high_order([H|T]) :-
+	show_elem_base(H),
+	print_high_order(T).
+
+% ---- 4) Permite a impressa do trajeto global.
+pretty([(-1,_,D)|T]) :-
+	write('------------------- Inicio --------------------\n'),
+	write('-> Partindo de '), write(D), write('\n'),
+	print_high_order(T),
+	write('--------------------- Fim ---------------------\n\n').
+pretty([(-1,D)|T]) :-
+	write('------------------- Inicio --------------------\n'),
+	write('-> Partindo de '), write(D), write('\n'),
+	print_high_order(T),
+	write('--------------------- Fim ---------------------\n\n').
+
+% #########################################################
 % Incremental cutout - utils
 
 % Retira da base de conhecimento todos os Predicados indicados.

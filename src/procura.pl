@@ -23,7 +23,7 @@ vizinhos(S,P1,R,V,Q) :-
             ), R).
 
 % ---- 1) Vizinhos em heap, calcula todos os vizinhos.
-vizinhos_heap(S,P1,R,V,Ct) :-
+vizinhos_heap2(S,P1,R,V,Ct) :-
       findall( A,                          %(K,A,[(Pt,K,A)|P1]),
             (aresta(Pt, S, A,D),
             ord_nonmember(A, V),
@@ -76,6 +76,10 @@ add_all_heap(Hi, [(K,S,P)|T], Hf) :-
       add_all_heap(H, T, Hf).
 
 uniform_cost(X, Y, P) :-
+      (nao(nodo(X,_,_,_,_,_,_,_,_,_,_));
+       nao(nodo(Y,_,_,_,_,_,_,_,_,_,_))),!,
+       fail.
+uniform_cost(X, Y, P) :-
       empty_heap(H),
       add_to_heap(H, 0, (0,X,[(-1,0,X)]) , Heap),
       uniform_cost_aux( Y,Heap,R,[] ),
@@ -83,10 +87,6 @@ uniform_cost(X, Y, P) :-
 
 uniform_cost_aux(Y, Heap, P,V) :-              % Se o prox elem for o destino, sai.
       min_of_heap(Heap, C, (C,Y,P)).
-uniform_cost_aux(Y, Heap, P, V) :-
-      get_from_heap(Heap, K, (K,S,P1), Heap2),
-      ord_member(S, V), !,
-      uniform_cost_aux(Y,Heap2,P,V).
 uniform_cost_aux(Y, Heap, P,V) :-              % Pop da fila de espera
       get_from_heap(Heap, K, (K,S,P1), Heap2), %append_queue([(S,P1)], Qp, Q),
       ord_add_element(V,S,Vf),                  % Se nao foi visitado

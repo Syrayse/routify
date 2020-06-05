@@ -13,6 +13,8 @@
 
 % #########################################################
 % 1) Calcular trajeto entre dois pontos.
+trajeto_base(FSearch, X, Y, R) :-
+      call(FSearch, X, Y, R).
 
 % #########################################################
 % 2) Selecionar apenas algumas operadoras de transporte
